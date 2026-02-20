@@ -50,8 +50,8 @@ const Pricing: React.FC = () => {
                 <div className="flex flex-col items-center justify-center">
                   <span className="text-stone-500 text-sm font-bold line-through mb-1 uppercase tracking-tighter opacity-60 italic">De R$ 225,00 por apenas</span>
                   <div className="flex items-start gap-1">
-                    <span className="text-white text-3xl font-black mt-4">R$</span>
-                    <span className="text-[110px] md:text-[130px] font-black text-white tracking-tighter leading-none drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">19,90</span>
+                    <span className="text-white text-xl font-black mt-2">R$</span>
+                    <span className="text-7xl md:text-8xl font-black text-white tracking-tighter leading-none drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">19,90</span>
                   </div>
                   <div className="flex items-center gap-4 mt-6 opacity-60">
                     <div className="flex gap-2">
@@ -74,9 +74,9 @@ const Pricing: React.FC = () => {
                 ))}
               </div>
 
-              <button className="w-full bg-[#22C55E] text-black font-black py-6 rounded-[1.5rem] text-xl md:text-2xl shadow-[0_12px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] hover:-translate-y-1 active:shadow-none active:translate-y-2 transition-all uppercase tracking-tighter mb-8 relative overflow-hidden group animate-pulse-glow shimmer-effect">
+              <a href="https://ggcheckout.com.br/checkout/v4/0XlzHWQLQvegxBdyz0rc" target="_blank" rel="noopener noreferrer" className="w-full bg-[#22C55E] text-black font-black py-6 rounded-[1.5rem] text-xl md:text-2xl shadow-[0_12px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] hover:-translate-y-1 active:shadow-none active:translate-y-2 transition-all uppercase tracking-tighter mb-8 relative overflow-hidden group animate-pulse-glow shimmer-effect text-center block">
                 <span className="relative z-10">QUERO O ACESSO AGORA!</span>
-              </button>
+              </a>
               
               {/* Garantia de 7 Dias Destaque */}
               <div className="flex items-center justify-center gap-4 py-6 border-t border-white/10 bg-red-950/10 rounded-b-[2rem]">

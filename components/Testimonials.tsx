@@ -95,7 +95,7 @@ const Testimonials: React.FC = () => {
           <div className="mt-10 md:hidden">
              <a 
                href="#precos" 
-               className="inline-block bg-[#22C55E] text-black font-black py-4 px-10 rounded-2xl text-lg shadow-[0_8px_0_rgb(21,128,61)] uppercase tracking-tighter"
+               className="inline-block bg-[#22C55E] text-black font-black py-4 px-10 rounded-2xl text-lg shadow-[0_8px_0_rgb(21,128,61)] uppercase tracking-tighter animate-pulse-glow shimmer-effect"
              >
                QUERO TER ESSES RESULTADOS
              </a>
