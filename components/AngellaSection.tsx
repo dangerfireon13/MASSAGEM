@@ -63,7 +63,7 @@ const AngellaSection: React.FC = () => {
             <div className="relative overflow-hidden group">
               <div className="flex w-[200%] animate-infinite-scroll gap-4">
                   {previewImages.concat(previewImages).map((src, i) => (
-                      <div key={i} className="w-56 h-32 md:w-72 md:h-40 flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300">
+                      <div key={i} className="w-40 h-40 md:w-56 md:h-56 flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300">
                           <img src={src} className="w-full h-full object-cover" alt="Course Preview" />
                       </div>
                   ))}

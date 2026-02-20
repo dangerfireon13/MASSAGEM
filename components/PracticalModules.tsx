@@ -56,7 +56,7 @@ const PracticalModules: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {modules.map((m, idx) => (
-            <div key={idx} className="group relative aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden border border-red-900/20">
+            <div key={idx} className="group relative aspect-square rounded-2xl overflow-hidden border border-red-900/20">
               <img 
                 src={m.image} 
                 alt={m.title} 
