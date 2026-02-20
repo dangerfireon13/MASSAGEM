@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AngellaSection from './components/AngellaSection';
 import PracticalModules from './components/PracticalModules';
@@ -25,7 +24,6 @@ const App: React.FC = () => {
       {step === 'disclaimer' && <Disclaimer onClose={() => setStep('content')} />}
       
       <div className={step === 'disclaimer' ? 'blur-sm pointer-events-none' : ''}>
-        <Navbar />
         <main className="overflow-x-hidden">
           <Hero />
           <Features />

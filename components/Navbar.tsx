@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
             <a href="#metodo" className="hover:text-red-500 transition-colors">O Método</a>
             <a href="#conteudo" className="hover:text-red-500 transition-colors">Conteúdo</a>
             <a href="#sobre" className="hover:text-red-500 transition-colors">A Angella</a>
-            <a href="#precos" className="bg-red-600 text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_4px_0_rgb(153,27,27)] font-black">
+            <a href="#precos" className="bg-red-600 text-white px-6 py-2 rounded-full hover:scale-105 transition-all shadow-[0_4px_0_rgb(153,27,27)] font-black animate-pulse shimmer-effect">
               QUERO ME INSCREVER
             </a>
           </div>

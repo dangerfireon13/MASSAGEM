@@ -74,9 +74,8 @@ const Pricing: React.FC = () => {
                 ))}
               </div>
 
-              <button className="w-full bg-[#22C55E] text-black font-black py-6 rounded-[1.5rem] text-xl md:text-2xl shadow-[0_12px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] hover:-translate-y-1 active:shadow-none active:translate-y-2 transition-all uppercase tracking-tighter mb-8 relative overflow-hidden group">
+              <button className="w-full bg-[#22C55E] text-black font-black py-6 rounded-[1.5rem] text-xl md:text-2xl shadow-[0_12px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] hover:-translate-y-1 active:shadow-none active:translate-y-2 transition-all uppercase tracking-tighter mb-8 relative overflow-hidden group animate-pulse-glow shimmer-effect">
                 <span className="relative z-10">QUERO O ACESSO AGORA!</span>
-                <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 skew-x-12"></div>
               </button>
               
               {/* Garantia de 7 Dias Destaque */}

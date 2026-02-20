@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <a href="#precos" className="w-full max-w-[340px] md:max-w-md bg-[#22C55E] text-black font-black py-5 md:py-6 rounded-2xl text-xl md:text-2xl shadow-[0_10px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] active:shadow-none active:translate-y-2 transition-all mb-4 uppercase tracking-tighter z-10 text-center">
+      <a href="#precos" className="w-full max-w-[340px] md:max-w-md bg-[#22C55E] text-black font-black py-5 md:py-6 rounded-2xl text-xl md:text-2xl shadow-[0_10px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] active:shadow-none active:translate-y-2 transition-all mb-4 uppercase tracking-tighter z-10 text-center animate-pulse-glow shimmer-effect">
         QUERO APRENDER AGORA
       </a>
       
