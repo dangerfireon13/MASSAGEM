@@ -77,39 +77,48 @@
     </style>
 </head>
   <body class="grainy-bg">
-    <div id="root"></div>
+    <div id="root" class="flex items-center justify-center min-h-screen">
+      <div class="text-white font-black animate-pulse">CARREGANDO...</div>
+    </div>
     <script type="module" src="/index.tsx"></script>
     <script>
-      document.addEventListener('click', function(e) {
-        const anchor = e.target.closest('a[href^="#"]');
-        if (anchor) {
-          const targetId = anchor.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            e.preventDefault();
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            const duration = 1500; // 1.5 seconds for a "slower" feel
-            let start = null;
+      (function() {
+        const easeInOutCubic = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-            window.requestAnimationFrame(function step(timestamp) {
-              if (!start) start = timestamp;
-              const progress = timestamp - start;
-              const easeInOutCubic = progress => progress < 0.5 
-                ? 4 * progress * progress * progress 
-                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-              
-              window.scrollTo(0, startPosition + distance * easeInOutCubic(Math.min(progress / duration, 1)));
-              if (progress < duration) {
-                window.requestAnimationFrame(step);
-              }
-            });
+        document.addEventListener('click', function(e) {
+          const anchor = e.target.closest('a[href^="#"]');
+          if (!anchor) return;
+
+          const targetId = anchor.getAttribute('href');
+          if (targetId === '#' || !targetId.startsWith('#')) return;
+          
+          try {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+              const startPosition = window.pageYOffset;
+              const distance = targetPosition - startPosition;
+              const duration = 1500;
+              let start = null;
+
+              window.requestAnimationFrame(function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const percentage = Math.min(progress / duration, 1);
+                
+                window.scrollTo(0, startPosition + distance * easeInOutCubic(percentage));
+                
+                if (progress < duration) {
+                  window.requestAnimationFrame(step);
+                }
+              });
+            }
+          } catch (err) {
+            console.warn('Scroll error:', err);
           }
-        }
-      });
+        });
+      })();
     </script>
   </body>
 </html>
