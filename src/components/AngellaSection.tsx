@@ -60,14 +60,20 @@ const AngellaSection: React.FC = () => {
             <span className="text-amber-500 text-[9px] font-black uppercase tracking-[0.6em] mb-3 block">Imersão em Vídeo</span>
             <h2 className="text-xl md:text-2xl font-black text-white uppercase italic mb-8">DENTRO DA <span className="text-red-600">PLATAFORMA</span></h2>
             
-            <div className="relative overflow-hidden group">
-              <div className="flex w-max animate-infinite-scroll gap-4 flex-nowrap">
-                  {previewImages.concat(previewImages).map((src, i) => (
-                      <div key={i} className="w-40 h-40 md:w-56 md:h-56 flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300">
+            <div className="relative">
+              <div 
+                className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                  {previewImages.map((src, i) => (
+                      <div key={i} className="w-[70vw] md:w-80 aspect-square flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300 snap-center">
                           <img src={src} className="w-full h-full object-cover" alt="Course Preview" />
                       </div>
                   ))}
               </div>
+              <p className="text-stone-500 text-[9px] font-bold uppercase tracking-widest mt-4">
+                Deslize para ver os módulos por dentro
+              </p>
             </div>
         </div>
 
