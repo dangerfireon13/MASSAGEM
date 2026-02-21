@@ -38,25 +38,33 @@
   }
 }
 
-@keyframes scroll {
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.05); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.05); }
+  70% { transform: scale(1); }
+}
+.animate-heartbeat {
+  animation: heartbeat 2s infinite ease-in-out;
+}
+
+@keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-@keyframes scroll-reverse {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 @keyframes shimmer {
   0% { transform: translateX(-100%) skewX(-12deg); }
   100% { transform: translateX(200%) skewX(-12deg); }
 }
 
-.animate-infinite-scroll {
-  animation: scroll 20s linear infinite;
+.animate-marquee {
+  animation: marquee 60s linear infinite;
 }
-.animate-infinite-scroll-reverse {
-  animation: scroll-reverse 20s linear infinite;
-}
-.animate-infinite-scroll:hover, .animate-infinite-scroll-reverse:hover {
-  animation-play-state: paused;
+.animate-marquee-reverse {
+  animation: marquee-reverse 60s linear infinite;
 }

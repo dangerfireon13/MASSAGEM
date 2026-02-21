@@ -56,26 +56,29 @@ const PracticalModules: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {modules.map((m, idx) => (
-            <div key={idx} className="group relative aspect-square rounded-2xl overflow-hidden border border-red-900/20">
+            <div key={idx} className="group relative aspect-square rounded-2xl overflow-hidden border border-red-900/20 hover:border-red-600/50 transition-all duration-500 shadow-2xl">
               <img 
                 src={m.image} 
                 alt={m.title} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100 brightness-75 group-hover:brightness-110" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity"></div>
               
               <div className="absolute top-4 left-4">
-                 <span className="bg-red-600 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                 <span className="bg-red-600 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.5)]">
                    {m.tag}
                  </span>
               </div>
 
-              <div className="absolute bottom-6 left-6 right-6 transform group-hover:-translate-y-1 transition-transform">
-                <h3 className="text-lg font-black text-white uppercase italic mb-1 tracking-tighter leading-tight">{m.title}</h3>
-                <p className="text-stone-300 text-[11px] font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute bottom-6 left-6 right-6 transform group-hover:-translate-y-2 transition-transform duration-500">
+                <h3 className="text-xl font-black text-white uppercase italic mb-1 tracking-tighter leading-tight drop-shadow-lg">{m.title}</h3>
+                <p className="text-stone-300 text-[11px] font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {m.activity}
                 </p>
               </div>
+              
+              {/* Hover Glow Overlay */}
+              <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>
           ))}
         </div>

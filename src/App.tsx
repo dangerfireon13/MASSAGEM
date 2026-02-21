@@ -7,16 +7,11 @@ import Certificate from './components/Certificate';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
-import Gatekeeper from './components/Gatekeeper';
 import Disclaimer from './components/Disclaimer';
 import Features from './components/Features';
 
 const App: React.FC = () => {
-  const [step, setStep] = useState<'gate' | 'disclaimer' | 'content'>('gate');
-
-  if (step === 'gate') {
-    return <Gatekeeper onConfirm={() => setStep('disclaimer')} />;
-  }
+  const [step, setStep] = useState<'disclaimer' | 'content'>('disclaimer');
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-red-900 selection:text-white">

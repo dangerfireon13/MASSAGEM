@@ -9,7 +9,10 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="inline-block border border-red-500/40 px-6 py-1.5 rounded-full mb-8 bg-red-950/40 relative z-10 backdrop-blur-sm">
-        <span className="text-red-500 text-[9px] md:text-[10px] font-black tracking-[0.4em] uppercase">O Caminho do Êxtase Sagrado</span>
+        <span className="text-red-500 text-[9px] md:text-[10px] font-black tracking-[0.4em] uppercase flex items-center gap-2">
+          <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping"></span>
+          O Caminho do Êxtase Sagrado
+        </span>
       </div>
       
       <h1 className="text-[32px] md:text-8xl font-black text-white leading-[1.1] mb-6 uppercase tracking-tighter max-w-sm md:max-w-5xl relative z-10">
@@ -28,7 +31,7 @@ const Hero: React.FC = () => {
         <div className="absolute -inset-4 bg-red-600/20 blur-3xl rounded-3xl animate-pulse"></div>
         <div className="relative w-full h-full bg-stone-950 rounded-2xl overflow-hidden border-2 border-red-600 shadow-[0_0_60px_rgba(220,38,38,0.4)]">
           <img 
-            src="https://dicasdopadrinho.com.br/wp-content/uploads/2023/08/SEM-CORTES-v2.gif.webp" 
+            src="https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/44566191a.gif" 
             alt="Tantra Experience" 
             className="w-full h-full object-cover brightness-110 contrast-125"
           />

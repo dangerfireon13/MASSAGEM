@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AngellaSection: React.FC = () => {
+  const [isPaused, setIsPaused] = useState(false);
   const fullContent = [
     {
       category: "Arte do Toque",
@@ -20,12 +21,20 @@ const AngellaSection: React.FC = () => {
     }
   ];
 
-  const previewImages = [
+  const previewImagesRow1 = [
     "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/ahoih_J1152551.webp",
     "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/yo_AXQF1152551.webp",
     "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/uga_FRn1152551.webp",
     "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/t_PEcvg1152551.webp",
     "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/e_CXEu_Q1152551.webp",
+  ];
+
+  const previewImagesRow2 = [
+    "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/90439e6f.webp",
+    "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/50439e6f.webp",
+    "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/20439e6f.webp",
+    "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/100439e6f.webp",
+    "https://cdn-mars.vendd.com.br/p/DBftsXQtVBAGY1Ok1kE6RR6Eb7HL1Wg2pU4Gy9pE7daTgwuz/v-files/assets/70439e6f.webp",
   ];
 
   const amandaImageUrl = "https://scontent.fcgh55-1.fna.fbcdn.net/v/t39.30808-6/593997222_789812600764626_8703064354453394793_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=QPFCs5z8ziMQ7kNvwGwZ50u&_nc_ohc=QPFCs5z8ziMQ7kNvwGwZ50u&_nc_oc=Adn59pB2FF37flXH9sUvRX8kpCgYOy1u_XFO5mAabDZyJ8--Lw_mq3Ih1iRwgN_alDGWUPrvOxmPS72PNhtsHM8I&_nc_zt=23&_nc_ht=scontent.fcgh55-1.fna&_nc_gid=-Ra4yB6is9SdOTIGY54bqA&oh=00_AfvoQ5o0DF10HLf6_5fyGY0jOK-GkOnc_mpPyUuLnZVvWQ&oe=699E7A0F";
@@ -55,38 +64,59 @@ const AngellaSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Conteúdo Visual do Curso - Scroll Mais Rápido */}
+        {/* Conteúdo Visual do Curso - Marquee Loop */}
         <div className="mb-16 text-center">
             <span className="text-amber-500 text-[9px] font-black uppercase tracking-[0.6em] mb-3 block">Imersão em Vídeo</span>
             <h2 className="text-xl md:text-2xl font-black text-white uppercase italic mb-8">DENTRO DA <span className="text-red-600">PLATAFORMA</span></h2>
             
-            <div className="relative">
-              <div 
-                className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                  {previewImages.map((src, i) => (
-                      <div key={i} className="w-[70vw] md:w-80 aspect-square flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300 snap-center">
-                          <img src={src} className="w-full h-full object-cover" alt="Course Preview" />
-                      </div>
+            <div 
+              className="relative space-y-4 cursor-pointer [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+              onClick={() => setIsPaused(!isPaused)}
+            >
+              {/* Row 1 */}
+              <div className="overflow-hidden flex">
+                <div 
+                  className="flex gap-4 w-max animate-marquee"
+                  style={{ animationPlayState: isPaused ? 'paused' : 'running', animationDuration: '40s' }}
+                >
+                  {[...previewImagesRow1, ...previewImagesRow1, ...previewImagesRow1].map((src, i) => (
+                    <div key={i} className="w-48 md:w-64 aspect-square flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300">
+                      <img src={src} className="w-full h-full object-cover" alt="Course Preview" />
+                    </div>
                   ))}
+                </div>
               </div>
+
+              {/* Row 2 */}
+              <div className="overflow-hidden flex">
+                <div 
+                  className="flex gap-4 w-max animate-marquee-reverse"
+                  style={{ animationPlayState: isPaused ? 'paused' : 'running', animationDuration: '40s' }}
+                >
+                  {[...previewImagesRow2, ...previewImagesRow2, ...previewImagesRow2].map((src, i) => (
+                    <div key={i} className="w-48 md:w-64 aspect-square flex-shrink-0 rounded-xl overflow-hidden border border-red-900/30 grayscale hover:grayscale-0 transition-all duration-300">
+                      <img src={src} className="w-full h-full object-cover" alt="Course Preview" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <p className="text-stone-500 text-[9px] font-bold uppercase tracking-widest mt-4">
-                Deslize para ver os módulos por dentro
+                {isPaused ? "▶️ Clique para continuar o loop" : "⏸️ Clique para pausar e ver detalhes"}
               </p>
             </div>
         </div>
 
         {/* Módulos em Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {fullContent.map((cat, idx) => (
-            <div key={idx} className="bg-stone-900/20 p-5 rounded-2xl border border-red-900/10 hover:border-red-600/30 transition-all group">
-              <h4 className="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-3 pb-2 border-b border-stone-800">{cat.category}</h4>
-              <ul className="space-y-2">
+            <div key={idx} className="bg-stone-900/20 p-6 rounded-2xl border border-red-900/10 hover:border-red-600/30 transition-all group">
+              <h4 className="text-amber-500 font-black text-sm md:text-base uppercase tracking-widest mb-4 pb-2 border-b border-stone-800">{cat.category}</h4>
+              <ul className="space-y-3">
                 {cat.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="w-1 h-1 bg-red-600 rounded-full mt-1.5 flex-shrink-0"></span>
-                    <span className="text-stone-400 text-[10px] font-bold group-hover:text-white transition-colors">{item}</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-red-600 rounded-full mt-1.5 flex-shrink-0"></span>
+                    <span className="text-stone-200 text-sm md:text-base font-bold group-hover:text-white transition-colors leading-tight">{item}</span>
                   </li>
                 ))}
               </ul>

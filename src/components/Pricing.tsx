@@ -17,7 +17,7 @@ const Pricing: React.FC = () => {
 
       <div className="max-w-xl mx-auto px-4 relative z-10">
         <div className="text-center mb-10">
-          <span className="text-red-500 text-[10px] font-black uppercase tracking-[0.5em] mb-3 block">Oferta por Tempo Limitado</span>
+          <span className="text-red-500 text-[10px] font-black uppercase tracking-[0.5em] mb-3 block animate-pulse">🔥 Oferta Expira em Breve</span>
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter">
             CURSO <span className="text-red-600 neon-red">PREMIUM</span>
           </h2>
