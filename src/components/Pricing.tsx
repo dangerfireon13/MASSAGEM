@@ -74,7 +74,7 @@ const Pricing: React.FC = () => {
                 ))}
               </div>
 
-              <a href="https://ggcheckout.com.br/checkout/v4/0XlzHWQLQvegxBdyz0rc" target="_blank" rel="noopener noreferrer" className="w-full bg-[#22C55E] text-black font-black py-6 rounded-[1.5rem] text-xl md:text-2xl shadow-[0_12px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] hover:-translate-y-1 active:shadow-none active:translate-y-2 transition-all uppercase tracking-tighter mb-8 relative overflow-hidden group animate-pulse-glow shimmer-effect text-center block">
+              <a href="https://www.ggcheckout.com/checkout/v2/0XlzHWQLQvegxBdyz0rc" target="_blank" rel="noopener noreferrer" className="w-full bg-[#22C55E] text-black font-black py-6 rounded-[1.5rem] text-xl md:text-2xl shadow-[0_12px_0_rgb(21,128,61)] hover:shadow-[0_15px_0_rgb(21,128,61)] hover:-translate-y-1 active:shadow-none active:translate-y-2 transition-all uppercase tracking-tighter mb-8 relative overflow-hidden group animate-pulse-glow shimmer-effect text-center block">
                 <span className="relative z-10">QUERO O ACESSO AGORA!</span>
               </a>
               
