@@ -1,7 +1,14 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || "";
-const ai = new GoogleGenAI({ apiKey });
+const getApiKey = () => {
+  try {
+    return process.env.API_KEY || process.env.GEMINI_API_KEY || "";
+  } catch {
+    return "";
+  }
+};
+
+const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
 const SYSTEM_INSTRUCTION = `
 Você é a Angella, a própria especialista em tantra e sexualidade consciente que apresenta este site.
