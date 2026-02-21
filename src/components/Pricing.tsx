@@ -51,7 +51,7 @@ const Pricing: React.FC = () => {
                   <span className="text-stone-500 text-sm font-bold line-through mb-1 uppercase tracking-tighter opacity-60 italic">De R$ 225,00 por apenas</span>
                   <div className="flex items-start gap-1">
                     <span className="text-white text-3xl font-black mt-4">R$</span>
-                    <span className="text-[110px] md:text-[130px] font-black text-white tracking-tighter leading-none drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">19,90</span>
+                    <span className="text-[110px] md:text-[130px] font-black text-white tracking-tighter leading-none drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">10,90</span>
                   </div>
                   <div className="flex items-center gap-4 mt-6 opacity-60">
                     <div className="flex gap-2">
