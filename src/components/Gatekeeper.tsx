@@ -8,13 +8,12 @@ interface Props {
 const Gatekeeper: React.FC<Props> = ({ onConfirm }) => {
   return (
     <div className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-6 text-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background GIF with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/seed/tantra-bg/1920/1080?blur=4" 
+          src="https://dicasdopadrinho.com.br/wp-content/uploads/2023/08/ezgif.com-gif-maker.gif.webp" 
           alt="Background" 
           className="w-full h-full object-cover opacity-40 brightness-50"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
       </div>
