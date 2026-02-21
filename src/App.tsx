@@ -7,7 +7,6 @@ import Certificate from './components/Certificate';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
-import ChatBot from './components/ChatBot';
 import Gatekeeper from './components/Gatekeeper';
 import Disclaimer from './components/Disclaimer';
 import Features from './components/Features';
@@ -36,7 +35,6 @@ const App: React.FC = () => {
           {/* Seção final que encerra o site conforme solicitado */}
           <FAQ />
         </main>
-        <ChatBot />
       </div>
     </div>
   );
