@@ -4,51 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angella - Especialista em Tantra</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-  <body class="grainy-bg">
-    <div id="root">
-      <div style="color: white; text-align: center; padding-top: 50px;">Carregando...</div>
-    </div>
-    <script type="module" src="/src/index.tsx"></script>
-    <script>
-      (function() {
-        const easeInOutCubic = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-        document.addEventListener('click', function(e) {
-          const anchor = e.target.closest('a[href^="#"]');
-          if (!anchor) return;
-
-          const targetId = anchor.getAttribute('href');
-          if (targetId === '#' || !targetId.startsWith('#')) return;
-          
-          try {
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              e.preventDefault();
-              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-              const startPosition = window.pageYOffset;
-              const distance = targetPosition - startPosition;
-              const duration = 1500;
-              let start = null;
-
-              window.requestAnimationFrame(function step(timestamp) {
-                if (!start) start = timestamp;
-                const progress = timestamp - start;
-                const percentage = Math.min(progress / duration, 1);
-                
-                window.scrollTo(0, startPosition + distance * easeInOutCubic(percentage));
-                
-                if (progress < duration) {
-                  window.requestAnimationFrame(step);
-                }
-              });
-            }
-          } catch (err) {
-            console.warn('Scroll error:', err);
-          }
-        });
-      })();
-    </script>
+  </head>
+  <body style="background-color: black; margin: 0; color: white;">
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
