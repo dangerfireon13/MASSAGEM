@@ -68,3 +68,11 @@
 .animate-marquee-reverse {
   animation: marquee-reverse 60s linear infinite;
 }
+
+/* Wistia Player Styles */
+wistia-player[media-id='bitqorpg5r']:not(:defined) { 
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bitqorpg5r/swatch'); 
+  display: block; 
+  filter: blur(5px); 
+  padding-top:125.0%; 
+}
